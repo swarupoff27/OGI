@@ -30,15 +30,14 @@ body {
     border: 2px solid red;
 }
 
-.gb {
-    border: 3px solid rgb(1, 255, 1);
-
-}
-
 .bb {
-    border: 1px solid blue;
+    border: 2px solid blue;
 }
 
+.gb {
+    border: 2px solid rgb(1, 255, 1);
+
+}
 
 .clearfix {
     display: flow-root;
@@ -51,7 +50,6 @@ body {
 .float__right {
     float: right;
 }
-
 
 .img__div {
     width: 50%;
@@ -80,37 +78,58 @@ body {
     margin: auto;
 }
 
-.about__content div {
+.about__content div,
+.timeline__content div,
+.hiring__content div,
+.footer__content div {
     position: absolute;
     width: 400px;
     top: 50%;
-    left: 0%;
     transform: translate(0%, -50%);
 }
 
-.about__content{
-    width: 562.5px;
-    position: absolute;
-    right: 0%;
-    bottom: 0;
-    top:0;
-}
-
-
-.hiring__content{
-    width: 562.5px;
-    position: absolute;
+.about__content div,
+.footer__content div,
+.hiring__content {
     left: 0;
-    bottom: 0;
-    top:0;
 }
 
-.hiring__content div{
-    width: 400px;
+.timeline__content div,
+.hiring__content div,
+.section4__text {
+    right: 0;
+}
+
+
+.about__content,
+.timeline__content,
+.hiring__content,
+.footer__content {
+    width: calc(1125px / 2);
     position: absolute;
-    top: 50%;
-    right: 0%;
-    transform: translate(0%, -50%);
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+.item1::before,
+.item2::before,
+.item3::before,
+.item4::before {
+    position: relative;
+    margin-left: -50px;
+    top: -5px;
+}
+
+.item1::after,
+.item2::after,
+.item3::after,
+.item4::after {
+    display: inline-block;
+    width: 150px;
+    margin-left: 30px;
+    position: relative;
+    top: -23px;
 }
 
 
@@ -123,7 +142,10 @@ h2 {
 
 
 
-.about p, .hiring p {
+.about__content div p,
+.hiring__content div p,
+.timeline__content div p,
+article p{
     font-size: 15px;
     line-height: 26px;
     letter-spacing: 0.5px;
@@ -133,7 +155,7 @@ h2 {
 
 
 
-/* header */
+/* header ************************************************************************/
 header {
     width: 100%;
     position: absolute;
@@ -145,8 +167,6 @@ header {
     font-size: 20px;
     color: #141720;
 }
-
-
 
 header ul {
     position: relative;
@@ -180,17 +200,16 @@ header li a:hover:after {
     background: #c71222;
 }
 
-/* header */
+/* header *********************************************************************************/
 
 
-/* hero */
+/* hero **************************************************************************************/
 
 main {
     width: 100%;
 }
 
 .hero {
-    /* width: 100%; */
     height: 100vh;
     min-height: 700px;
     margin: 0 auto;
@@ -219,16 +238,14 @@ main {
     color: #5d5f65;
 }
 
-/* hero */
+/* hero *************************************************************************************/
 
 
 
-/* section2 */
+/* section2 ***********************************************************************************/
 
 .timeline__chart {
-    width: 50%;
-    height: 700px;
-    position: relative;
+    height: 100%;
 }
 
 .timeline__chart li {
@@ -236,11 +253,9 @@ main {
 }
 
 .items {
-    width:400px;
+    width: 400px;
     height: 100%;
     position: absolute;
-    top:0;
-    left:0;
 }
 
 span {
@@ -248,10 +263,9 @@ span {
     width: 4px;
     background-color: #d4d4d4;
     position: absolute;
-    top:0;
-    left:0;
-    right:0;
-    margin:auto; 
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .items li {
@@ -266,133 +280,78 @@ span {
     margin: 180px 0 0 191.5px;
 }
 
-.item1::before{
-  content:"2003";
-  margin-left:-50px;
-  color:#c71222;
-  position: relative;
-  top:-5px;
-}
-
-.item1::after{
-/*   border:1px solid red; */
-  display:inline-block;
-  width:150px;
-  content:"Started";
-  margin-left:30px;
-  position:relative;
-  top:-23px;
-}
 
 
-.item2::before{
-  content:"2006";
-  color:#d4d4d4;
-  margin-left:-50px;
-  position: relative;
-  top:-5px;
+.item1::before {
+    content: "2003";
+    color: #c71222;
 }
 
-.item2::after{
-  /* border:1px solid red; */
-  display:inline-block;
-  width:150px;
-  content:"Important Date One";
-  margin-left:30px;
-  position:relative;
-  top:-23px;
+.item1::after {
+    content: "Started";
 }
 
-.item3::before{
-  content:"2010";
-  color:#d4d4d4;
-  margin-left:-50px;
-  position: relative;
-  top:-5px;
+.item2::before {
+    content: "2006";
+    color: #d4d4d4;
 }
 
-.item3::after{
-/*   border:1px solid red; */
-  content:"Important Date Two";
-  display:inline-block;
-  width:150px;
-  margin-left:30px;
-  position:relative;
-  top:-23px;
+.item2::after {
+    content: "Important Date One";
 }
 
-.item4::before{
-  content:"2016";
-  color:#d4d4d4;
-  margin-left:-50px;
-  position: relative;
-  top:-5px;
+.item3::before {
+    content: "2010";
+    color: #d4d4d4;
 }
 
-.item4::after{
-/*   border:1px solid red; */
-  display:inline-block;
-  width:150px;
-  content:"Current";
-  margin-left:30px;
-  position:relative;
-  top:-23px;
+.item3::after {
+    content: "Important Date Two";
 }
 
-.items li:nth-child(1){
-    border:4px solid #c71222;
+.item4::before {
+    content: "2016";
+    color: #d4d4d4;
 }
 
-.items li:nth-child(2){
-  margin-top:70px;
+.item4::after {
+    content: "Current";
 }
 
-.items li:nth-child(3){
-  margin-top:115px;
+.items li:nth-child(1) {
+    border: 4px solid #c71222;
 }
-.items li:nth-child(4){
-  margin-top:140px;
+
+.items li:nth-child(2) {
+    margin-top: 70px;
+}
+
+.items li:nth-child(3) {
+    margin-top: 115px;
+}
+
+.items li:nth-child(4) {
+    margin-top: 140px;
 }
 
 
-.timeline__content{
-    height:700px;
-    position: relative;
+.timeline__content div {
+    right: 0;
 }
 
-.timeline__content__wrapper{
-   width: 400px;
-   position:absolute;
-   top:50%;
-   right: 0%;
-   transform: translate(0%, -50%);
-}
-
-.timeline h2{
+.timeline h2 {
     color: #2b2b2b;
 }
 
-.timeline p{
-    font-size: 15px;
-    line-height: 26px;
-    letter-spacing: 0.5px;
-    margin-top: 55px;
+.timeline__content div p {
     color: #5d5f65;
 }
 
-.section2__text p{
-    color:#141720;
-}
 
-.timeline__chart, .timeline__content{
-    width:50%;
-    
-}
-
-/* section2 */
+/* section2 *********************************************************************************/
 
 
-/* section3 */
+/* section3 *********************************************************************************/
 
 .services {
     background-color: #efefef;
@@ -403,13 +362,11 @@ span {
     text-align: center;
 }
 
-
 .services {
     width: 100%;
 }
 
-.services__wrapper {
-    margin: 0 auto;
+.services__container {
     padding: 140px 0;
 }
 
@@ -420,11 +377,8 @@ span {
 
 
 article p {
-    font-size: 15px;
-    line-height: 26px;
-    letter-spacing: 0.5px;
-    color: #5d5f65;
     margin-top: 16px;
+    color: #5d5f65;
 }
 
 article {
@@ -442,8 +396,8 @@ article {
 h3 {
     font-size: 20px;
     line-height: 26px;
-    color: #141720;
     margin-top: 20px;
+    color: #141720;
 }
 
 article {
@@ -452,46 +406,19 @@ article {
 }
 
 
-/* section3 */
+/* section3 ****************************************************************************/
 
 
-/* section4 */
-.section4__text {
-    right: 0;
-}
-
-/* section4 */
+/* section4 ****************************************************************************/
+/* section4 ****************************************************************************/
 
 
-/* footer */
+/* footer ****************************************************************************/
 
-.footer__content{
-    width: 562.5px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top:0;
-}
-
-.footer__content__inner{
-    width: 400px;
-    position: absolute;
-    top: 50%;
-    left: 0%;
-    transform: translate(0%, -50%);
-}
 
 form {
     margin-top: 35px;
-    height: 400px;
-
 }
-
-form div {
-    margin-top: 50px;
-    border-bottom: 2px solid white;
-}
-
 
 input,
 textarea {
@@ -500,8 +427,10 @@ textarea {
     line-height: 26px;
     letter-spacing: 0.5px;
     border: none;
-    /* width: 400px; */
-    /* max-width: 400px; */
+    margin-top: 50px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+    width: 400px;
     background: transparent;
 }
 
@@ -512,6 +441,7 @@ textarea::placeholder {
     font-size: 15px;
     line-height: 26px;
     letter-spacing: 0.5px;
+
 
 }
 
@@ -538,13 +468,13 @@ textarea {
     border-radius: 100px;
     border: none;
     background-color: #c71222;
-    position: absolute;
-    right: 0%;
-    bottom: 6%;
     font-size: 15px;
     line-height: 26px;
     letter-spacing: 0.19px;
     padding: 12px 47px;
+    position: relative;
+    top: 20px;
+    left: 58%;
 
 }
 
@@ -553,5 +483,4 @@ button:hover {
 }
 
 
-/* footer */
-
+/* footer ****************************************************************************/
